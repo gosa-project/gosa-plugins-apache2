@@ -249,5 +249,3 @@ class apacheUtils extends plugin
         return($zones);
     }
 }
-
-?>
