@@ -227,7 +227,7 @@ class servapache extends goService
                 $ldap->modify($attrs);
 
                 if (!$ldap->success()){
-                    msg_dialog::display(_("LDAP error"), msgPool::ldaperror($ldap->get_error(), $this->dn, LDAP_MOD, get_class()));
+                    msg_dialog::display(_("LDAP error"), msgPool::ldaperror($ldap->get_error(), $this->dn, LDAP_MOD, __CLASS__));
                 }
             }
         }
@@ -238,7 +238,7 @@ class servapache extends goService
             $ldap->cd($dn);
             $ldap->rmdir_recursive($dn);
             if (!$ldap->success()){
-                msg_dialog::display(_("LDAP error"), msgPool::ldaperror($ldap->get_error(), $this->dn, LDAP_DEL, get_class()));
+                msg_dialog::display(_("LDAP error"), msgPool::ldaperror($ldap->get_error(), $this->dn, LDAP_DEL, __CLASS__));
             }
         }
 
@@ -261,7 +261,7 @@ class servapache extends goService
                 $ldap->add($attrs);
             }
             if (!$ldap->success()){
-                msg_dialog::display(_("LDAP error"), msgPool::ldaperror($ldap->get_error(), $this->dn, LDAP_ADD, get_class()));
+                msg_dialog::display(_("LDAP error"), msgPool::ldaperror($ldap->get_error(), $this->dn, LDAP_ADD, __CLASS__));
             }
         }
     }
@@ -306,5 +306,5 @@ class servapache extends goService
                     ));
     }
 }
-// vim:tabstop=2:expandtab:shiftwidth=2:filetype=php:syntax:ruler:
+
 ?>
